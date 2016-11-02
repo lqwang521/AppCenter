@@ -10,10 +10,14 @@
 
 @interface VibrateCollectionViewCell : UICollectionViewCell
 
-//@property (nonatomic,copy) NSString* nameLableStr;
-//@property (nonatomic,copy) NSString* imageStr;
-
+/**
+ HeadImage
+ */
 @property (nonatomic,strong) UIImageView* headImageView;
+
+/**
+ Name
+ */
 @property (nonatomic,strong) UILabel* nameLable;
 
 @end

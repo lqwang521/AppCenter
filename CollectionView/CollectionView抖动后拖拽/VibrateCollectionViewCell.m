@@ -7,7 +7,6 @@
 //
 
 #import "VibrateCollectionViewCell.h"
-//#define kWidth [UIScreen mainScreen].bounds.size.width
 
 @interface VibrateCollectionViewCell ()
 
@@ -24,8 +23,8 @@
     return self;
 }
 
-//-(void)layoutSubviews{
 - (void)CreateUI{
+    
     if(!_headImageView){
         _headImageView = [[UIImageView alloc]init];
         _headImageView.frame = CGRectMake(0, 0, 114*kWidth/750.00, 114*kWidth/750.00);
@@ -42,12 +41,6 @@
         _nameLable.textColor = [UIColor blackColor];
         [_headImageView addSubview:_nameLable];
     }
-//    if(_nameLableStr){
-//        _nameLable.text = _nameLableStr;
-//    }
-//    if(_imageStr){
-//        _headImageView.image = [UIImage imageNamed:_imageStr];
-//    }
 }
 
 @end
