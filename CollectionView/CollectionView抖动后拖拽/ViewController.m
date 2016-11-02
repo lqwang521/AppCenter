@@ -149,7 +149,6 @@
             break;
         default:
             [self.vibrate endInteractiveMovement];
-            
             //[self.vibrate cancelInteractiveMovement];
             break;
     }
@@ -221,6 +220,9 @@
     [self addRecognize];
 }
 
+/**
+ 添加确定按钮
+ */
 - (void)addSureButton{
     
     UIButton* sure = [[UIButton alloc]init];
@@ -231,16 +233,29 @@
     [self.view addSubview:sure];
 }
 
+/**
+ 添加长按手势
+ */
 - (void)addLongGesture{
     
     [self.vibrate addGestureRecognizer:self.longGesture];
 }
 
+
+/**
+ 添加手势
+ */
 - (void)addRecognize{
     
     [self.vibrate addGestureRecognizer:self.recognize];
 }
 
+
+/**
+ 确定按钮点击事件
+
+ @param sender 确定按钮
+ */
 - (void)sureBtnAction:(UIButton*)sender{
     
     [self.vibrate removeGestureRecognizer:self.longGesture];
@@ -253,8 +268,6 @@
     
     [self.vibrate reloadData];
 }
-
-
 
 #pragma mark - Getters And Setters
 
