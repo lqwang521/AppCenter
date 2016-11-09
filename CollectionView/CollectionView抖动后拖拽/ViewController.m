@@ -38,12 +38,14 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self CreateUI];
+    
+    [self.vibrate reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self.vibrate reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,17 +105,15 @@
 
 //返回每个item
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     VibrateCollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"vibrate" forIndexPath:indexPath];
     
-    //[cell sizeToFit];
-    if(!cell){
-        NSLog(@"-----------");
-    }
     NSInteger num = indexPath.row;
     
     cell.nameLable.text = self.collectionArr[num];
     cell.headImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"00%@",self.collectionArr[num]]];
-    if(self.isBegin == YES ){
+    
+    if(self.isBegin == YES){
         [self starLongPress:cell];
     }
     
@@ -166,7 +166,7 @@
     [self.collectionArr removeObject:objc];
     //将数据插入到资源数组中的目标位置上
     [self.collectionArr insertObject:objc atIndex:destinationIndexPath.item];
-    //    [self.vibrate reloadData];
+    //[self.vibrate reloadData];
 }
 
 //开始抖动

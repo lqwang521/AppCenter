@@ -19,6 +19,9 @@
     self = [super initWithFrame:frame];
     if(self){
         [self CreateUI];
+        
+        self.layer.borderColor=[UIColor darkGrayColor].CGColor;
+        self.layer.borderWidth=0.3;
     }
     return self;
 }
